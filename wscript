@@ -37,11 +37,11 @@ def options(ctx):
     # Set libcsp options
     gr = ctx.add_option_group('libcsp options')
     gr.add_option('--includes', default='', help='Add additional include paths, separate with comma')
-    gr.add_option('--install-csp', action='store_true', help='Installs CSP headers and lib')
+    gr.add_option('--install-csp', action='store_true', default=True, help='Installs CSP headers and lib')
 
     gr.add_option('--disable-output', action='store_true', help='Disable CSP output')
     gr.add_option('--disable-stlib', action='store_true', help='Build objects only')
-    gr.add_option('--enable-shlib', action='store_true', help='Build shared library')
+    gr.add_option('--enable-shlib', action='store_true', default=True, help='Build shared library')
     gr.add_option('--enable-rdp', action='store_true', help='Enable RDP support')
     gr.add_option('--enable-rdp-fast-close', action='store_true', help='Enable fast close of RDP connections')
     gr.add_option('--enable-qos', action='store_true', help='Enable Quality of Service support')
@@ -49,16 +49,16 @@ def options(ctx):
     gr.add_option('--enable-crc32', action='store_true', help='Enable CRC32 support')
     gr.add_option('--enable-hmac', action='store_true', help='Enable HMAC-SHA1 support')
     gr.add_option('--enable-xtea', action='store_true', help='Enable XTEA support')
-    gr.add_option('--enable-python3-bindings', action='store_true', help='Enable Python3 bindings')
+    gr.add_option('--enable-python3-bindings', action='store_true',default=True, help='Enable Python3 bindings')
     gr.add_option('--enable-examples', action='store_true', help='Enable examples')
     gr.add_option('--enable-dedup', action='store_true', help='Enable packet deduplicator')
     gr.add_option('--enable-external-debug', action='store_true', help='Enable external debug API')
     gr.add_option('--enable-debug-timestamp', action='store_true', help='Enable timestamps on debug/log')
 
     # Drivers and interfaces (requires external dependencies)
-    gr.add_option('--enable-if-zmqhub', action='store_true', help='Enable ZMQ interface')
-    gr.add_option('--enable-can-socketcan', action='store_true', help='Enable Linux socketcan driver')
-    gr.add_option('--with-driver-usart', default=None, metavar='DRIVER',
+    gr.add_option('--enable-if-zmqhub', action='store_true', default=True, help='Enable ZMQ interface')
+    gr.add_option('--enable-can-socketcan', action='store_true', default=True, help='Enable Linux socketcan driver')
+    gr.add_option('--with-driver-usart', default='linux', metavar='DRIVER',
                   help='Build USART driver. [windows, linux, None]')
 
     # OS
