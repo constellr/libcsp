@@ -1,6 +1,11 @@
+
+Libcsp V1.6 doesn't support sending packets via UDP interface. The DPU which uses Libcsp V1.6 has the ability to send/recieve CSP packets via UDP interface. To achieve this functionality, Fraunhofer EMI has backported UDP interface from V2.0 to V1.6. We emulate the same to have a standalone library that can be used to recieve packets and read data from the DPU without having to use a DPU simulator.
+
+The following document aims to provide the reader instructions to install the library and run the examples to check the functionality. Further, there are sections which talk about the changes made to the current implementation and a detailed control flow discussion.
+
 ## Installation instructions
 
-We will use WAF build sytstem to build CSP library and to generate the python embeddings.
+We will use WAF build sytstem to build CSP library and to generate python embeddings.
 
 All of the required settings are set as default in the [script](/wscript). Use the following commands to install libcsp with python bindings enabled.
 ```
